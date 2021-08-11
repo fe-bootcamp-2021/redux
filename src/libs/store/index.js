@@ -3,6 +3,6 @@ import counter from "./features/counter";
 
 export default configureStore({
   reducer: {
-    counter,
+    counter
   },
 });
