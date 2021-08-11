@@ -32,14 +32,13 @@ export const counterSlice = createSlice({
       state.min = action.payload
       state.value = action.payload
     },
-    
+
     maxNum: (state, action) => {
       state.max = action.payload
     },
   },
 });
 
-// Action creators are generated for each case reducer function
 export const { step, maxNum, minNum, increment, decrement, incrementByAmount } = counterSlice.actions;
 
 export default counterSlice.reducer;

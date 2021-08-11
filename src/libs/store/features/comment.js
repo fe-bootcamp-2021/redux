@@ -7,27 +7,31 @@ const idGenerator = () => {
         return id;
     };
 };
+
 const getRandomId = idGenerator();
 
 const initialState = {
     inputValue: "",
     allComment: [],
-    changeInput:""
+    changeInput: ""
 };
 
 export const counterSlice = createSlice({
     name: "comment",
     initialState,
     reducers: {
+
         givValue: (state, action) => {
             state.inputValue = action.payload;
         },
+
         addComment: (state) => {
             if (state.inputValue) {
                 state.allComment = [{ id: getRandomId(), comment: state.inputValue, date: new Date().toLocaleString(), class: "hidden" }, ...state.allComment]
                 state.inputValue = ""
             }
         },
+
         handleChangeCom: (state, action) => {
             state.allComment = state.allComment.map((elm) => {
                 if (elm.id === action.payload.id) {
@@ -41,9 +45,11 @@ export const counterSlice = createSlice({
                 return elm
             })
         },
+
         givChangeValue: (state, action) => {
             state.changeInput = action.payload;
         },
+
         handleSaveChange: (state, action) => {
             state.allComment = state.allComment.map((elm) => {
                 if (elm.id === action.payload.id) {
@@ -57,10 +63,9 @@ export const counterSlice = createSlice({
                 return elm
             })
         }
-
     },
 });
 
-export const { givValue, addComment, handleChangeCom,handleSaveChange,givChangeValue } = counterSlice.actions;
+export const { givValue, addComment, handleChangeCom, handleSaveChange, givChangeValue } = counterSlice.actions;
 
 export default counterSlice.reducer;
