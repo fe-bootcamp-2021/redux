@@ -32,7 +32,7 @@ export default function Counter() {
 
   return (
     <div className={classes.container}>
-      <div><h2> -Counter App with Redux- </h2></div>
+      <div><h2> -Counter App and Comments Section with Redux- </h2></div>
       <div className={classes.number}>{count}</div>
       <div>
         <button disabled={(count-step<min)} className={classes.pointer} onClick={() => handleDecrementByStep(step)}> - </button>

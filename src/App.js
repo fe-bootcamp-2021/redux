@@ -1,10 +1,11 @@
 import Counter from "./components/Counter";
-import "./App.css";
+import Comments from "./components/Comments";
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <Counter />
+      <Comments />
     </div>
   );
 }

@@ -2,9 +2,10 @@
     width: 60%;
     height: 300px;
     display: flex;
+    text-align: center;
     justify-content: space-around;
     flex-direction: column;
-    margin: 50px 20%;
+    margin: 20px 20%;
     box-shadow: 0 0 50px white;
     border:1px solid azure;
     background-color: azure;

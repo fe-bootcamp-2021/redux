@@ -1,0 +1,33 @@
+input[type=text] {
+    border-radius: 20px;
+    outline: none;
+    padding-left: 10px;
+    border: 1px red black;
+}
+
+.ulWrapper{
+    list-style: none;
+}
+
+.wrapper{
+    text-align: center;
+}
+
+.inputItem{
+    width: 20%;
+    margin:10px 40%;
+    color: white;
+    border-radius: 20px;
+    overflow-y: auto;
+    background: #937e5f;
+    border: none;
+    font-size: 5px;
+    height: 26px;
+    word-wrap: break-word;
+    line-height: 25px;
+    padding-left: 15px;
+}
+
+.button{
+    cursor: pointer;
+}
