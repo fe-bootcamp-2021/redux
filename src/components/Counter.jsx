@@ -30,11 +30,11 @@ export default function Counter() {
   return (
     <div>
       {count}
-      <input onChange={handleChangeMin} placeholder="Min" />
-      <input onChange={handleChangeMax} placeholder="Max" />
-      <input onChange={incrementByAmount} placeholder="Step" />
-      <button onClick={handleInc}>+</button>
-      <button onClick={handleDec}>-</button>
+      <input className="border-2 border-indigo-600" onChange={handleChangeMin} placeholder="Min" />
+      <input className="border-2 border-indigo-600" onChange={handleChangeMax} placeholder="Max" />
+      <input className="border-2 border-indigo-600" onChange={incrementByAmount} placeholder="Step" />
+      <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onClick={handleInc}>+</button>
+      <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onClick={handleDec}>-</button>
     </div>
   );
 }
