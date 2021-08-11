@@ -1,6 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
+  min: 0,
+  max: 5,
+  step: 1,
   value: 0,
 };
 
@@ -9,18 +12,27 @@ export const counterSlice = createSlice({
   initialState,
   reducers: {
     increment: (state) => {
-      state.value += 1;
+      if (Number(state.max) >= Number(state.value) + Number(state.step))
+        state.value = Number(state.value) + Number(state.step);
     },
     decrement: (state) => {
-      state.value -= 1;
+      if (Number(state.min) <= Number(state.value) - Number(state.step))
+        state.value = Number(state.value) - Number(state.step);
     },
-    incrementByAmount: (state, action) => {
-      state.value += action.payload;
+    min: (state, action) => {
+      state.min = action.payload;
+      state.value = action.payload;
+    },
+    max: (state, action) => {
+      state.max = action.payload;
+    },
+    step: (state, action) => {
+      state.step = action.payload;
     },
   },
 });
 
 // Action creators are generated for each case reducer function
-export const { increment, decrement, incrementByAmount } = counterSlice.actions;
+export const { increment, decrement, min, max, step } = counterSlice.actions;
 
 export default counterSlice.reducer;

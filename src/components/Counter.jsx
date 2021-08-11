@@ -1,5 +1,11 @@
 import { useSelector, useDispatch } from "react-redux";
-import { decrement, increment } from "../libs/store/features/counter";
+import {
+  decrement,
+  increment,
+  min,
+  max,
+  step,
+} from "../libs/store/features/counter";
 
 export default function Counter() {
   const dispatch = useDispatch();
@@ -9,10 +15,37 @@ export default function Counter() {
     dispatch(increment());
   };
 
+  const handleDec = () => {
+    dispatch(decrement());
+  };
+
+  const handleMin = (ev) => {
+    dispatch(min(ev.target.value));
+  };
+
+  const handleMax = (ev) => {
+    dispatch(max(ev.target.value));
+  };
+
+  const handleStep = (ev) => {
+    dispatch(step(ev.target.value));
+  };
+
   return (
     <div>
-      {count}
+      <p>
+        Min: <input type="number" onChange={handleMin} />
+      </p>
+      <p>
+        Max: <input type="number" onChange={handleMax} />
+      </p>
+      <p>
+        Step: <input type="number" onChange={handleStep} />
+      </p>
+
       <button onClick={handleInc}>+</button>
+      <button onClick={handleDec}>-</button>
+      <p> {count}</p>
     </div>
   );
 }
