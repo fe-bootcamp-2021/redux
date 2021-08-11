@@ -14,15 +14,19 @@ export const counterSlice = createSlice({
     increment: (state) => {
       state.value += state.step;
     },
+
     decrement: (state) => {
       state.value -= state.step;
     },
+
     changeStep: (state, action) => {
       state.step = action.payload;
     },
+
     minNum: (state, action) => {
       state.min = action.payload;
     },
+    
     maxNum: (state, action) => {
       state.min = action.payload;
     },
