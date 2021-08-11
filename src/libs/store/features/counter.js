@@ -4,7 +4,7 @@ const initialState = {
   value: 0,
   step: 1,
   min: 0,
-  max: 10,
+  max: 20,
   comments: [],
 };
 
@@ -29,7 +29,7 @@ export const counterSlice = createSlice({
     },
 
     maxNum: (state, action) => {
-      state.min = action.payload;
+      state.max = action.payload;
     },
 
     addComment: (state, action) => {
