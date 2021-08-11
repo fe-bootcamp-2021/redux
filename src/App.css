@@ -2,37 +2,104 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  background: url("https://i.pinimg.com/originals/41/82/a9/4182a9dd330c6442c4a1fbc78274d838.png");
+  background-size: cover;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.buttons {
+  padding: 3%;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.inputs {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.btn {
   color: white;
+  background: dodgerblue;
+  font-size: 25px;
+  padding: 15px;
+  margin-left: 5px;
+  border: none;
+  transition: 0.5s;
 }
 
-.App-link {
-  color: #61dafb;
+.btn:hover {
+  background: none;
+  color: dodgerblue;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.count {
+  font-size: 40px;
+}
+
+.inp {
+  background: none;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  margin-top: 10px;
+  font-weight: bold;
+  border-radius: 8px;
+  font-size: 28px;
+  outline: none;
+  transition: 0.3s;
+  border: 2px solid rgb(177, 177, 177);
+}
+
+.inp:focus {
+  border-color: dodgerblue;
+  box-shadow: 0 0 10px 2px dodgerblue;
+}
+
+.main-comment {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 100px;
+}
+
+.comment-inp {
+  background: none;
+  color: white;
+  width: 50%;
+  height: 100px;
+  padding: 10px;
+  margin-top: 5px;
+  font-weight: bold;
+  border-radius: 8px;
+  font-size: 15px;
+  outline: none;
+  transition: 0.3s;
+  border: 2px solid rgb(177, 177, 177);
+}
+
+.comment-inp:focus {
+  border-color: dodgerblue;
+  box-shadow: 0 0 10px 2px dodgerblue;
+}
+
+.comment {
+  width: 600px;
+  color: white;
+  font-size: 20px;
+  margin: 20px auto;
+}
+
+.comment-btn {
+  color: white;
+  background: dodgerblue;
+  font-size: 25px;
+  padding: 15px;
+  margin-top: 10px;
+  border: none;
+  transition: 0.5s;
+}
+
+.comment-btn:hover {
+  background: none;
+  color: dodgerblue;
 }

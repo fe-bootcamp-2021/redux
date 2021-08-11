@@ -1,14 +1,17 @@
+import "../App.css";
+
 import { useSelector, useDispatch } from "react-redux";
 import {
   decrement,
   increment,
-  handleInputChange,
+  changeStateByStep,
+  receiveMinVal,
+  receiveMaxVal,
 } from "../libs/store/features/counter";
-import Input from "./Input";
 
 export default function Counter() {
   const dispatch = useDispatch();
-  const { value, min, max, step } = useSelector((state) => state.counter);
+  const count = useSelector((state) => state.counter.value);
 
   const handleInc = () => {
     dispatch(increment());
@@ -18,50 +21,46 @@ export default function Counter() {
     dispatch(decrement());
   };
 
-  const handleChange = (name) => (e) => {
-    dispatch(
-      handleInputChange({
-        name,
-        value: e.target.value.trim() ? parseInt(e.target.value) : "",
-      })
-    );
+  const handleStep = (e) => {
+    dispatch(changeStateByStep(+e.target.value));
+  };
+
+  const handleMinVal = (e) => {
+    dispatch(receiveMinVal(+e.target.value));
+  };
+
+  const handleMaxVal = (e) => {
+    dispatch(receiveMaxVal(+e.target.value));
   };
 
   return (
-    <div>
-      <p>{value}</p>
-      <button disabled={value >= max} onClick={handleInc}>
-        inc
-      </button>
-      <button disabled={value <= min} onClick={handleDec}>
-        dec
-      </button>
-      <br />
-      <br />
-      <br />
-      <Input
-        label="step"
-        placeholder="step..."
-        name="step"
-        onChange={handleChange("step")}
-        value={step}
-      />
-      <br />
-      <Input
-        label="max"
-        placeholder="max..."
-        name="max"
-        onChange={handleChange("max")}
-        value={max}
-      />
-      <br />
-      <Input
-        label="min"
-        placeholder="min..."
-        name="min"
-        onChange={handleChange("min")}
-        value={min}
-      />
+    <div className="all">
+      <h2 className="count">{count}</h2>
+      <div className="buttons">
+        <button className="btn" onClick={handleInc}>
+          Increment
+        </button>
+        <button className="btn" onClick={handleDec}>
+          Decrement
+        </button>
+      </div>
+      <div className="inputs">
+        <input
+          placeholder="Step..."
+          className="inp"
+          onChange={handleStep}
+        ></input>
+        <input
+          placeholder="Min Value"
+          className="inp"
+          onChange={handleMinVal}
+        ></input>
+        <input
+          placeholder="Max Value"
+          className="inp"
+          onChange={handleMaxVal}
+        ></input>
+      </div>
     </div>
   );
 }
