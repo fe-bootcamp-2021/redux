@@ -5,6 +5,7 @@ const initialState = {
   step: 1,
   min: 0,
   max: 10,
+  comments: [],
 };
 
 export const counterSlice = createSlice({
@@ -26,15 +27,19 @@ export const counterSlice = createSlice({
     minNum: (state, action) => {
       state.min = action.payload;
     },
-    
+
     maxNum: (state, action) => {
       state.min = action.payload;
+    },
+
+    addComment: (state, action) => {
+      state.comments.unshift(<p>{action.payload}</p>);
     },
   },
 });
 
 // Action creators are generated for each case reducer function
-export const { increment, decrement, changeStep, minNum, maxNum } =
+export const { increment, decrement, changeStep, minNum, maxNum, addComment } =
   counterSlice.actions;
 
 export default counterSlice.reducer;
