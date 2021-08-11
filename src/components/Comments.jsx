@@ -21,7 +21,6 @@ export default function Comments() {
       <Button variant="outlined" color="primary" onClick={handleAddBtn}>
         Add Comment
       </Button>
-      {/* <ul> */}
       {comments.map((comment, idx) => (
         <Card>
           <Container>
@@ -31,7 +30,6 @@ export default function Comments() {
           </Container>
         </Card>
       ))}
-      {/* </ul> */}
     </Card>
   );
 }
