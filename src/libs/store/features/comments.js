@@ -15,7 +15,7 @@ export const commentsSlice = createSlice({
 
     addComment: (state, action) => {
       if (state.inputValue !== "") {
-        state.comments = [...state.comments, state.inputValue];
+        state.comments = [state.inputValue, ...state.comments];
         state.inputValue = "";
       }
     },
