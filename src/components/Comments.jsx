@@ -4,8 +4,7 @@ import { addComment, getInputValue } from "../libs/store/features/comments";
 
 export default function Comments() {
   const dispatch = useDispatch();
-  const inputValue = useSelector((state) => state.comments.inputValue);
-  const comments = useSelector((state) => state.comments.comments);
+  const { inputValue, comments } = useSelector((state) => state.comments);
 
   const handleCommentInputValue = (e) => {
     dispatch(getInputValue(e.target.value));

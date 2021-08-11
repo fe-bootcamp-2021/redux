@@ -12,10 +12,7 @@ import {
 
 export default function Counter() {
   const dispatch = useDispatch();
-  const count = useSelector((state) => state.counter.value);
-  let step = useSelector((state) => state.counter.step);
-  let min = useSelector((state) => state.counter.min);
-  let max = useSelector((state) => state.counter.max);
+  const { count, step, min, max } = useSelector((state) => state.counter);
 
   const handleMinCount = (e) => {
     dispatch(setMinValue(Number(e.target.value)));

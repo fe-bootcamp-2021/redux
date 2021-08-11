@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 // import { act } from "react-dom/cjs/react-dom-test-utils.production.min";
 
 const initialState = {
-  value: 0,
+  count: 0,
   step: 1,
   min: 0,
   max: 10000000000000,
@@ -13,7 +13,7 @@ export const counterSlice = createSlice({
   initialState,
   reducers: {
     setValue: (state, action) => {
-      state.value = action.payload;
+      state.count = action.payload;
     },
 
     setMinValue: (state, action) => {
@@ -29,11 +29,11 @@ export const counterSlice = createSlice({
     },
 
     incrementByAmount: (state, action) => {
-      state.value += action.payload;
+      state.count += action.payload;
     },
 
     decrementByAmount: (state, action) => {
-      state.value -= action.payload;
+      state.count -= action.payload;
     },
   },
 });
