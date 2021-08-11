@@ -2,8 +2,6 @@ import { Button, Input, Typography, Card, Container } from "@material-ui/core";
 import { Label } from "@material-ui/icons";
 import { useSelector, useDispatch } from "react-redux";
 import {
-  decrement,
-  increment,
   incrementByAmount,
   decrementByAmount,
   setStepValue,
