@@ -9,12 +9,6 @@ export const commentSlice = createSlice({
   name: "comment",
   initialState,
   reducers: {
-    // add: (state) => {
-    //     state.comments = [
-    //         { id: state.comments.length, date: now, comment: "" },
-    //         ...state.comments,
-    //     ];
-    // },
     textInp: (state, action) => {
       state.text = action.payload;
     },
