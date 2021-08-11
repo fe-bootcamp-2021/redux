@@ -16,15 +16,9 @@ export const counterSlice = createSlice({
       state.value = action.payload;
     },
 
-    increment: (state) => {
-      state.value += 1;
+    toggleMinBool: (state, action) => {
+      state.isMin = !state.isMin;
     },
-    decrement: (state) => {
-      state.value -= 1;
-    },
-    // reset: (state) => {
-    //   state.value = 0;
-    // },
 
     setMinValue: (state, action) => {
       state.min = action.payload;

@@ -1,3 +1,5 @@
+import { Button, Input, Typography, Card, Container } from "@material-ui/core";
+import { Label } from "@material-ui/icons";
 import { useSelector, useDispatch } from "react-redux";
 import {
   decrement,
@@ -10,28 +12,12 @@ import {
   setValue,
 } from "../libs/store/features/counter";
 
-// let step;
-// let min;
-// let max;
-
 export default function Counter() {
   const dispatch = useDispatch();
   const count = useSelector((state) => state.counter.value);
   let step = useSelector((state) => state.counter.step);
   let min = useSelector((state) => state.counter.min);
   let max = useSelector((state) => state.counter.max);
-
-  // const handleInc = () => {
-  //   dispatch(increment());
-  // };
-
-  // const handleDec = () => {
-  //   dispatch(decrement());
-  // };
-
-  // const handleRes = () => {
-  //   dispatch(reset());
-  // };
 
   const handleMinCount = (e) => {
     dispatch(setMinValue(Number(e.target.value)));
@@ -58,7 +44,6 @@ export default function Counter() {
   };
 
   const handleDecByCount = (step) => {
-    // console.log(count, step, min);
     if (count - step >= min) {
       dispatch(decrementByAmount(step));
     } else {
@@ -67,17 +52,38 @@ export default function Counter() {
   };
 
   return (
-    <div>
-      <p>{count}</p>
-      <label for="minimum">-Minimum</label>
-      <input onChange={handleMinCount} name="minimum" />
-      <label for="maximum">Maximum</label>
-      <input onChange={handleMaxCount} name="maximum" />
-      <label for="step">Step</label>
-      <input onChange={handleStepCount} value={step} name="step" />
-      <button onClick={() => handleIncByCount(step)}>+</button>
-      <button onClick={() => handleDecByCount(step)}>-</button>
-      {/* <button onClick={handleRes}>Reset</button> */}
-    </div>
+    <Card>
+      <Typography color="primary" variant="h1">
+        {count}
+      </Typography>
+      <Container>
+        <Typography display="inline" color="secondary">
+          Minimum
+        </Typography>
+        <Input onChange={handleMinCount} name="minimum" />
+        <Typography display="inline" color="primary">
+          Maximum
+        </Typography>
+        <Input onChange={handleMaxCount} name="maximum" />
+        <label for="step">Step</label>
+        <Input onChange={handleStepCount} value={step} name="step" />
+      </Container>
+      <Button
+        disabled={count === max}
+        size="large"
+        color="primary"
+        onClick={() => handleIncByCount(step)}
+      >
+        +
+      </Button>
+      <Button
+        disabled={count === min}
+        size="large"
+        color="secondary"
+        onClick={() => handleDecByCount(step)}
+      >
+        -
+      </Button>
+    </Card>
   );
 }
