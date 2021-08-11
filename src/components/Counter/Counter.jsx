@@ -5,7 +5,7 @@ import {
   min,
   max,
   step,
-} from "../libs/store/features/counter";
+} from "../../libs/store/features/counter";
 
 export default function Counter() {
   const dispatch = useDispatch();
